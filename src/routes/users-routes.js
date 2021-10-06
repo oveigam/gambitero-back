@@ -8,16 +8,6 @@ const validateResult = require('../middleware/validateResult');
 
 const usersRouter = Router();
 
-usersRouter.post('/signup',
-    [
-        check('username').not().isEmpty(),
-        check('email').normalizeEmail({ gmail_remove_dots: false }).isEmail(),
-        check('password').isLength({ min: 6 }),
-        validateResult
-    ],
-    usersController.signUp
-)
-
 usersRouter.post('/login', usersController.login);
 
 usersRouter.post('/refreshLogin', usersController.refreshLogin)

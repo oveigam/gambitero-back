@@ -3,6 +3,7 @@ const http = require('http');
 
 const Database = require('./database');
 const Sockets = require('./sockets');
+const Demo = require('./demo');
 
 const gambiteosRouter = require('../routes/gambiteos-routes')
 const usersRouter = require('../routes/users-routes')
@@ -25,6 +26,8 @@ class Server {
         this.database = new Database()
 
         this.sockets = new Sockets(this.server)
+
+        this.demo = new Demo()
 
     }
 
@@ -49,6 +52,9 @@ class Server {
         this.useMiddlewares()
 
         await this.database.connect()
+        
+        await this.demo.clearDatabase()
+        await this.demo.insertFakeData()
 
         this.sockets.startListening()
 
