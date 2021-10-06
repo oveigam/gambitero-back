@@ -1,0 +1,33 @@
+{
+  "name": "gambitero-back",
+  "version": "0.4.0-alpha",
+  "description": "Backend para aplicación de gestión de planes Gambitero",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "expo-server-sdk": "^3.6.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.11.1",
+    "ibm-cos-sdk": "^1.9.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "mongoose": "^5.12.11",
+    "mongoose-delete": "^0.5.3",
+    "mongoose-unique-validator": "^2.0.3",
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
+    "socket.io": "^4.1.2",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
